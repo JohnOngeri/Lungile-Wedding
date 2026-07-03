@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette — extracted from the design handoff */
+  --color-forest: #2a4438;
+  --color-pine: #22382d;
+  --color-evergreen: #1b2d24;
+  --color-gold: #c5a253;
+  --color-gold-bright: #d9bc74;
+  --color-gold-pale: #e6cc8b;
+  --color-gold-glow: #ead296;
+  --color-sage: #9caea9;
+  --color-ink: #33352f;
+  --color-body: #5c6157;
+  --color-muted: #6b7065;
+  --color-faint: #9a9c92;
+  --color-slate-olive: #4a5248;
+  --color-ivory: #f7f5ef;
+  --color-parchment: #f9f7f2;
+  --color-porcelain: #fffefb;
+  --color-linen: #d8d2c2;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Great Vibes", cursive;
+
+  --animate-bob: bob 2.4s ease-in-out infinite;
+  --animate-kenburns: kenburns 26s ease-in-out infinite alternate;
+  --animate-fade-up: fade-up 1.6s ease both;
+
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 9px); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.04) translate(0, 0); }
+    to { transform: scale(1.18) translate(-16px, -12px); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(26px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll-reveal: elements start hidden and rise into place when they
+   enter the viewport (driven by IntersectionObserver in useReveal). */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-bob,
+  .animate-kenburns,
+  .animate-fade-up {
+    animation: none;
+  }
+}

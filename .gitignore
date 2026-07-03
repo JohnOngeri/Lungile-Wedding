@@ -1,0 +1,14 @@
+# Dependencies & build output
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Design prototype handoff bundle (kept locally as reference, not shipped)
+project/
+
+# OS / editor
+.DS_Store
+*.local
+
+# Agent config — never track (see repo policy)
+CLAUDE.md

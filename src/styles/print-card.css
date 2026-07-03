@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #2a4438;
+  --color-pine: #22382d;
+  --color-gold: #c5a253;
+  --color-gold-bright: #d9bc74;
+  --color-gold-pale: #e6cc8b;
+  --color-gold-glow: #ead296;
+  --color-sage: #9caea9;
+  --color-ink: #33352f;
+  --color-muted: #6b7065;
+  --color-faint: #9a9c92;
+  --color-ivory: #f7f5ef;
+  --color-parchment: #f9f7f2;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+@page {
+  size: 5in 7in;
+  margin: 0;
+}
+
+@media print {
+  body { background: #ffffff !important; }
+  .no-print { display: none !important; }
+  .print-stage {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+  .print-card { box-shadow: none !important; }
+}
