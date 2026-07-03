@@ -20,7 +20,6 @@ export function Rsvp() {
     const payload = JSON.stringify({
       fullName: name,
       attending: String(data.get('attendance') ?? ''),
-      guestCount: String(data.get('guests') ?? ''),
       dietary: String(data.get('dietary') ?? ''),
       songRequest: String(data.get('song') ?? ''),
     })
@@ -96,29 +95,16 @@ export function Rsvp() {
               </div>
             </fieldset>
 
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[22px]">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="rsvp-guests" className={labelClass}>
-                  Number of guests
-                </label>
-                <select id="rsvp-guests" name="guests" className={inputClass}>
-                  <option value="1">1 guest</option>
-                  <option value="2">2 guests</option>
-                  <option value="3">3 guests</option>
-                  <option value="4">4 guests</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="rsvp-dietary" className={labelClass}>
-                  Dietary requirements
-                </label>
-                <input
-                  id="rsvp-dietary"
-                  name="dietary"
-                  placeholder="Vegetarian, halaal, allergies…"
-                  className={inputClass}
-                />
-              </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="rsvp-dietary" className={labelClass}>
+                Dietary requirements
+              </label>
+              <input
+                id="rsvp-dietary"
+                name="dietary"
+                placeholder="Vegetarian, halaal, allergies…"
+                className={inputClass}
+              />
             </div>
 
             <div className="flex flex-col gap-2">

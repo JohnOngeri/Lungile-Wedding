@@ -14,8 +14,13 @@ export const SITE_URL = ''
 export const RSVP_ENDPOINT =
   'https://script.google.com/macros/s/AKfycbzFjEO4-a6M1pG06PpaV8t-1d9vxMHdMF8qDERhwGsRkB3kye2WoNi7W9BsMJMJSk6l3Q/exec'
 
-/** Gift registry URL. Leave empty while the registry is still being set up. */
-export const REGISTRY_URL = ''
+/** Cash gift banking details, shown in the Gifts section. */
+export const GIFT_BANK_DETAILS = {
+  bank: 'FNB',
+  accountName: 'NL Ngcobo (Nothando)',
+  accountNumber: '62214149107',
+  phoneNumbers: ['082 562 6095', '082 474 5368'],
+}
 
 /**
  * Background music sources, tried in order until one loads.
